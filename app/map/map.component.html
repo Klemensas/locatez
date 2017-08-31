@@ -1,0 +1,7 @@
+<ActionBar title="Hello, red is google, green is android" class="action-bar">
+</ActionBar>
+<StackLayout>
+  <Label *ngIf="GOOGLE_API_ENABLED" style="padding: 5 10; line-height: 1.5; background-color: #b71c1c; color: white;" text="Acc(current, average, best): {{fused.acc}};{{fused.avgAcc}};{{fused.bestAcc}}, bearing: {{fused.bearing || '-'}}, speed: {{fused.speed || '-'}}, latitude: {{fused.lat}}, longitude: {{fused.lng}}, altitude: {{fused.alt || '-'}}" textWrap="true"></Label>
+  <Label *ngIf="ANDROID_API_ENABLED" style="padding: 5 10; line-height: 1.5; background-color: #1B5E20; color: white;" text="Acc(current, average, best): {{locMan.acc}};{{locMan.avgAcc}};{{locMan.bestAcc}}, bearing: {{locMan.bearing || '-'}}, speed: {{locMan.speed || '-'}}, latitude: {{locMan.lat}}, longitude: {{locMan.lng}}, altitude: {{locMan.alt || '-'}}" textWrap="true"></Label>
+  <MapView (mapReady)="onMapReady($event)" marker="{{location}}"></MapView>
+</StackLayout>
